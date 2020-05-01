@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import NavBar from './NavBar'
 
 function SignInForm(props) {
     const [username, setUsername] = useState("")
@@ -40,20 +41,24 @@ function SignInForm(props) {
     }
     
     return(
-        <div style={formDivStyle}>
-            <h1>Sign Up</h1>
-            <form className="ui form" onSubmit={handleSubmit}>
-                <div className="field">
-                    <label>Username</label>
-                    <input value={username} onChange={handleUsernameChange} type="text" placeholder="username"/>
-                </div>
-                <div className="field">
-                    <label>Password</label>
-                    <input value={password} onChange={handlePasswordChange} type="password" placeholder="password"/>
-                </div>
-                
-                <button className="ui button" type="submit">Submit</button>
-            </form>
+        <div>
+            <NavBar />
+        
+            <div style={formDivStyle}>
+                <h1>Sign Up</h1>
+                <form className="ui form" onSubmit={handleSubmit}>
+                    <div className="field">
+                        <label>Username</label>
+                        <input value={username} onChange={handleUsernameChange} type="text" placeholder="username"/>
+                    </div>
+                    <div className="field">
+                        <label>Password</label>
+                        <input value={password} onChange={handlePasswordChange} type="password" placeholder="password"/>
+                    </div>
+                    
+                    <button className="ui button" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     )
 }
